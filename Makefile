@@ -56,3 +56,7 @@ info:
 	echo Modname: $(modname)
 play:
 	(make install && cd .. && make play)
+edit:
+	nvim ../Descriptions/$(modname).py
+readme:
+	(cd ../Descriptions/ && python3 $(modname).py)

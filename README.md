@@ -80,7 +80,7 @@ This means that four in-gamehours spent sitting regenerates the same amount of h
   * Ensuring that the highest possible lightning damage bonus is not affected by this mod.
 * [Runic Scrolls](https://www.nexusmods.com/outward/mods/132 "Runic Scrolls")
 
-  * To provide an alternative to a [Lexicon](https://outward.gamepedia.com/Lexicons "Lexicon") for people who rarely cast [Rune Magic](https://outward.gamepedia.com/Rune_Magic "Rune Magic").
+  * Provide Runic Scrolls, which are consumed alternatives to lexicons that goes into your quiver slot.
   * Said alternative should be expensive to not make [Internalized Lexicon](https://outward.gamepedia.com/Internalized_Lexicon "Internalized Lexicon") redundant.
 * [Skilled at Sitting](https://www.nexusmods.com/outward/mods/127 "Skilled at Sitting")
 

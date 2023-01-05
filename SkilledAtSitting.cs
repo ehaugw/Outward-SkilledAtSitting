@@ -7,13 +7,15 @@
     using BepInEx;
     using InstanceIDs;
     using TinyHelper;
+    using System.IO;
 
     [BepInPlugin(GUID, NAME, VERSION)]
     public class SkilledAtSitting : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.skilledatsitting";
-        public const string VERSION = "5.0.1";
+        public const string VERSION = "5.0.2";
         public const string NAME = "Skilled at Sitting";
+        public static string ModFolderName = Directory.GetParent(typeof(SkilledAtSitting).Assembly.Location).Name.ToString();
 
         public Skill sitInstance;
 
@@ -50,7 +52,7 @@
                 EffectBehaviour = EditBehaviours.Destroy,
                 Target_ItemID = IDs.pushKickID,
                 New_ItemID = IDs.sitID,
-                SLPackName = "SkilledAtSitting",
+                SLPackName = ModFolderName,
                 SubfolderName = "Sit",
                 Description = "Sit down to regain health, burnt health and burnt stamina.",
                 
