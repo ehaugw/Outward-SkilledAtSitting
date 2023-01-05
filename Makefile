@@ -23,9 +23,23 @@ assemble:
 	cp -u resources/icons/sit.png                              public/$(sideloaderpath)/Items/Sit/Textures/icon.png
 	
 publish:
+	make clean
 	make assemble
-	rm -f $(modname).rar
 	rar a $(modname).rar -ep1 public/*
+	
+	cp -r public/BepInEx thunderstore
+	mv thunderstore/plugins/$(modname)/* thunderstore/plugins
+	rmdir thunderstore/plugins/$(modname)
+	
+	(cd ../Descriptions && python3 $(modname).py)
+	
+	cp -u resources/manifest.json thunderstore/
+	cp -u README.md thunderstore/
+	cp -u resources/icon.png thunderstore/
+	(cd thunderstore && zip -r $(modname)_thunderstore.zip *)
+	cp -u ../tcli/thunderstore.toml thunderstore
+	(cd thunderstore && tcli publish --file $(modname)_thunderstore.zip) || true
+	mv thunderstore/$(modname)_thunderstore.zip .
 
 install:
 	make assemble
@@ -33,7 +47,12 @@ install:
 	cp -u -r public/* $(gamepath)
 clean:
 	rm -f -r public
+	rm -f -r thunderstore
 	rm -f $(modname).rar
-	rm -f -r bin
+	rm -f $(modname)_thunderstore.zip
+	rm -f resources/manifest.json
+	rm -f README.md
 info:
 	echo Modname: $(modname)
+play:
+	(make install && cd .. && make play)

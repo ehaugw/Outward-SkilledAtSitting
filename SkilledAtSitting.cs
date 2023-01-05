@@ -12,7 +12,7 @@
     public class SkilledAtSitting : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.skilledatsitting";
-        public const string VERSION = "5.0.0";
+        public const string VERSION = "5.0.1";
         public const string NAME = "Skilled at Sitting";
 
         public Skill sitInstance;
